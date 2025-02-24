@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3)); /* 3 is the number of images */
+  }
+}
+
+.carousel-inner {
+  animation: scroll 100s linear infinite; /* Adjust time as needed */
+}
