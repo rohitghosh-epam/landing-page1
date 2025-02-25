@@ -1355,55 +1355,54 @@
             </div>
         </div>
 
-        <div class="flex place-items-center place-content-center">
+        <div class="pb-10 flex place-items-center place-content-center">
             <div class="xl:mx-80 md:mx-30 grid md:grid-cols-2 space-x-1">
-                <div class="grid grid-cols-2 space-x-3">
+                <div class="grid grid-cols-2 gap-5">
                     <img class="" src="../../assets/img/main/discover/pay1.png.png" alt="">
                     <div class="grid grid-rows-2 md:space-y-1 xl:space-y-3">
-                        <img src="../../assets/img/main/discover/pay2.png.png" alt="">
-                        <img src="../../assets/img/main/discover/pay3.png.png" alt="">
+                        <img class="md:h-46 xl:h-auto" src="../../assets/img/main/discover/pay2.png.png" alt="">
+                        <img class="md:h-46 xl:h-auto" src="../../assets/img/main/discover/pay3.png.png" alt="">
                     </div>
                 </div>
     
-                <div class="flex flex-col">
+                <div class="flex flex-col justify-around">
                     <div>
                         <button class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Easy Payment</b></button>
                     </div>
-                    <p class="text-[50px] text-black"><b>Discover Dream <br>
+                    <p class="text-[40px] text-black"><b>Discover Dream <br>
                         Destinations with Ease</b></p>
     
                     <p class="text-gray-400">Discover how you can offset your adventure's carbon emissions
                         and support the sustainable initiatives practiced by our
                         operators worldwide.</p>
     
-                    <div class="flex flex-row justify-around">
-                        <img class="w-20 h-10" src="../../assets/img/main/discover/1.png" alt="">
-                        <img class="w-20 h-10" src="../../assets/img/main/discover/2.png" alt="">
-                        <img class="w-20 h-10" src="../../assets/img/main/discover/3.png" alt="">
-                        <img class="w-20 h-10" src="../../assets/img/main/discover/4.png" alt="">
+                    <div class="flex flex-row justify-evenly">
+                        <img class="w-15 h-8 hover:cursor-pointer" src="../../assets/img/main/discover/1.png" alt="">
+                        <img class="w-15 h-8 hover:cursor-pointer" src="../../assets/img/main/discover/2.png" alt="">
+                        <img class="w-15 h-8 hover:cursor-pointer" src="../../assets/img/main/discover/3.png" alt="">
+                        <img class="w-15 h-8 hover:cursor-pointer" src="../../assets/img/main/discover/4.png" alt="">
                     </div>
                 </div>
-    
             </div>
         </div>
 
+        <div>
+            
+        </div>
 
     </main>
 
     <script>
-    // Wait until the DOM is fully loaded before attaching JavaScript behavior
     document.addEventListener("DOMContentLoaded", function() {
         const carousel = document.getElementById('carousel1');
         const next = document.getElementById('next1');
         const prev = document.getElementById('prev1');
         
         next.addEventListener('click', () => {
-            // Move the first card to the end
             carousel.appendChild(carousel.firstElementChild);
         });
 
         prev.addEventListener('click', () => {
-            // Move the last card to the beginning
             carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild);
         });
     });
