@@ -484,15 +484,123 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-blend-mode:darken;">
-            <div class="inner ml-20">
-                <div class="my-5 flex flex-row">
+            <div class="inner pl-10">
+                <div class="py-10 px-8 flex flex-row justify-between">
                     <div class="flex flex-col">
-                        <h1>
-                            <b></b>
-                        </h1>
-                        <p></p>
+                        <h1 class="text-black text-[30px]"><b>Top Rated Hotels</b></h1>
+                        <p class="text-gray-400 text-[13px]">Quality as judged by customers. Book the ideal price!</p>
                     </div>
-                    <button></button>
+                    <button class="flex flex-row px-2 bg-black rounded-full place-items-center hover:cursor-pointer gap-2">
+                        <p class="text-white">View More</p>
+                        <img src="../../assets/img/main/right-arrow.png" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 space-x-2">
+                <div class="h-auto w-70 inline-block">
+                    <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/2.png');
+                    background-size: 100% 80%;
+                    background-repeat: no-repeat;
+                    background-blend-mode:darken;">
+                        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                        <div class="w-full flex flex-row place-items-center justify-end px-3 bottom-27 absolute">
+                            <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                <p class="text-[11px]"><b>4.96</b></p>
+                                <p class="text-gray-600 text-[11px]">(672 reviews)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                            <p class="text-[15px] p-0"><b>Califonia Sunset/Twilight Boat Cruise</b></p>
+                            <p class="text-[12px]">2 days 3 nights - Family</p>
+                            <div class="flex flex-row place-items-center justify-between w-full">
+                                <span class="flex flex-row place-items-center">
+                                    <p class="text-black text-[14px]"><b>$48.25</b></p>
+                                    <p class="text-[12px]">/person</p>
+                                </span>
+                                <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-auto w-70 inline-block">
+                    <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/3.png');
+                    background-size: 100% 80%;
+                    background-repeat: no-repeat;
+                    background-blend-mode:darken;">
+                        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                        <div class="w-full flex flex-row place-items-center justify-end px-3 bottom-27 absolute">
+                            <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                <p class="text-[11px]"><b>4.96</b></p>
+                                <p class="text-gray-600 text-[11px]">(672 reviews)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                            <p class="text-[15px] p-0"><b>NYC: Food Tasting and Culture Tour</b></p>
+                            <p class="text-[12px]">3 days 3 nights - company</p>
+                            <div class="flex flex-row place-items-center justify-between w-full">
+                                <span class="flex flex-row place-items-center">
+                                    <p class="text-black text-[14px]"><b>$17.32</b></p>
+                                    <p class="text-[12px]">/person</p>
+                                </span>
+                                <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-auto w-70 inline-block">
+                    <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/4.png');
+                    background-size: 100% 80%;
+                    background-repeat: no-repeat;
+                    background-blend-mode:darken;">
+                        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                        <div class="w-full flex flex-row place-items-center justify-end px-3 bottom-27 absolute">
+                            <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                <p class="text-[11px]"><b>4.96</b></p>
+                                <p class="text-gray-600 text-[11px]">(672 reviews)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                            <p class="text-[15px] p-0"><b>Grand Canyo Horseshoe Bend 2 days</b></p>
+                            <p class="text-[12px]">7 days 6 nights - small group</p>
+                            <div class="flex flex-row place-items-center justify-between w-full">
+                                <span class="flex flex-row place-items-center">
+                                    <p class="text-black text-[14px]"><b>$17.32</b></p>
+                                    <p class="text-[12px]">/person</p>
+                                </span>
+                                <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-auto w-70 inline-block">
+                    <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/2.png');
+                    background-size: 100% 80%;
+                    background-repeat: no-repeat;
+                    background-blend-mode:darken;">
+                        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                        <div class="w-full flex flex-row place-items-center justify-end px-3 bottom-27 absolute">
+                            <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                <p class="text-[11px]"><b>4.96</b></p>
+                                <p class="text-gray-600 text-[11px]">(672 reviews)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                            <p class="text-[15px] p-0"><b>NYC: Food Tasting and Culture Tour</b></p>
+                            <p class="text-[12px]">3 days 3 nights - company</p>
+                            <div class="flex flex-row place-items-center justify-between w-full">
+                                <span class="flex flex-row place-items-center">
+                                    <p class="text-black text-[14px]"><b>$17.32</b></p>
+                                    <p class="text-[12px]">/person</p>
+                                </span>
+                                <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
