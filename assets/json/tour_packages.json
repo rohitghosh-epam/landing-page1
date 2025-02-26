@@ -1,0 +1,28 @@
+{
+    "tours": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "price": 799.99,
+            "categories": ["Electronics", "Computers"]
+        },
+        {
+            "id": 2,
+            "name": "Smartphone",
+            "price": 599.99,
+            "categories": ["Electronics", "Mobile Phones"]
+        },
+        {
+            "id": 3,
+            "name": "Blender",
+            "price": 99.99,
+            "categories": ["Home Appliances", "Kitchen"]
+        },
+        {
+            "id": 4,
+            "name": "Electric Kettle",
+            "price": 39.99,
+            "categories": ["Home Appliances", "Kitchen"]
+        }
+    ]
+}
