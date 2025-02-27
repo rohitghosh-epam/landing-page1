@@ -3,7 +3,86 @@
 function render_packages(totalData) {
     let container = document.getElementById("packages");
     container.innerHTML = '';
+
+    const firstCard = document.createElement('div');
+    firstCard.className = 'h-auto w-90 inline-block transition-all duration-300 ease-in-out transform hover:scale-110';
+    firstCard.innerHTML = `
+                        <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/1.png');
+                        background-size: 100% 80%;
+                        background-repeat: no-repeat;
+                        background-blend-mode:darken;">
+                            <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                            <div class="w-full flex flex-row place-items-center justify-between px-7 bottom-33 absolute">
+                                <div class="bg-yellow-300 px-2 py-1.5 flex place-items-center rounded-full gap-1 text-[11px]">
+                                    <img src="../../assets/img/main/cards/thunder.png" alt="">
+                                    <p><b> Exceptional </b></p>
+                                </div>
+                                <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                    <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                    <p class="text-[11px]"><b>5.00</b></p>
+                                </div>
+                            </div>
+                            <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                                <p class="text-[15px] p-0"><b>Califonia Sunset/Twilight Boat Cruise</b></p>
+                                <div class="flex flex-row justify-between w-full place-items-center">
+                                    <p class="text-[12px]">7 days 6 nights - Small group</p>
+                                    <p class="text-black text-[11px]">Promotion will end in</p>
+                                </div>
+                                <div class="flex flex-row place-items-center justify-between pt-2 w-full">
+                                    <span class="flex flex-row place-items-center">
+                                        <p class="text-black text-[14px]"><b>$35.62</b></p>
+                                        <p class="text-[12px]">/person</p>
+                                    </span>
+                                    
+                                    <div class="absolute bottom-10 md:bottom-0 right-4 text-gray-400">
+                                        <div class="flex space-x-2">
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="day"></span>
+                                                <p class="text-xs mt-1">Days</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="hour"></span>
+                                                <p class="text-xs mt-1">Hours</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="min"></span>
+                                                <p class="text-xs mt-1">Mins</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="sec"></span>
+                                                <p class="text-xs mt-1">Secs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+    container.appendChild(firstCard);
     
+    
+    //Render Time Function
+    function showTime(time){
+    if(time<0){
+        return ;
+    }
+    const days= Math.floor(time/(24*60*60));
+    const hours= Math.floor((time%(24*60*60))/(60*60));
+    const mins= Math.floor((time%(60*60))/60);
+    const secs= Math.floor((time%(60)));
+   
+    document.getElementById("day").innerText=days;
+    document.getElementById("hour").innerText=hours;
+    document.getElementById("min").innerText=mins;
+    document.getElementById("sec").innerText=secs;
+    setTimeout(()=>{
+        showTime(time-1)
+    },1000);
+    }
+
+    showTime((22)*24*60*60);
+
     totalData.tours.forEach(data => {
         
     const card = document.createElement('div');
@@ -13,7 +92,7 @@ function render_packages(totalData) {
     background-size: 100% 80%;
     background-repeat: no-repeat;
     background-blend-mode:darken;">
-        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+        <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
         <div class="w-full flex flex-row place-items-center justify-end px-3 bottom-27 absolute">
             <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
                 <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
@@ -104,7 +183,7 @@ function render_hotels(totalData) {
       card.style.backgroundBlendMode = 'darken';
       
       card.innerHTML = `
-        <img class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+        <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
           <div class="w-full flex flex-row place-items-center justify-end px-3 md:bottom-32 absolute">
             <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
               <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
@@ -142,7 +221,7 @@ function render_flights(totalData) {
                     background-size: 60% 100%;
                     background-repeat: no-repeat;
                     background-blend-mode:darken;">
-                <img class="rounded-full p-1 my-3 left-3 bg-gray-200 absolute hover:cursor-pointer size-6" src="../../assets/img/main/cards/heart.png" alt="">
+                <img onclick="toggleHeartColor(this)" class="rounded-full p-1 my-3 left-3 bg-gray-200 absolute hover:cursor-pointer size-6" src="../../assets/img/main/cards/heart.png" alt="">
                 <div class="flex flex-row gap-5 h-full w-full ml-40">
                     <div class="bg-white px-4 h-full w-65 flex flex-col place-items-start justify-between flex-wrap rounded-2xl p-5 border border-gray-200">
                         <span class="flex flex-row gap-1.5 place-items-center justify-between w-full">
@@ -191,7 +270,7 @@ function render_flights(totalData) {
                     background-size: 60% 100%;
                     background-repeat: no-repeat;
                     background-blend-mode:darken;">
-                <img class="rounded-full p-1 my-3 left-3 bg-gray-200 absolute hover:cursor-pointer size-6" src="../../assets/img/main/cards/heart.png" alt="">
+                <img onclick="toggleHeartColor(this)" class="rounded-full p-1 my-3 left-3 bg-gray-200 absolute hover:cursor-pointer size-6" src="../../assets/img/main/cards/heart.png" alt="">
                 <div class="flex flex-row gap-5 h-full w-full ml-40">
                     <div class="bg-white px-4 h-full w-65 flex flex-col place-items-start justify-between flex-wrap rounded-2xl p-5 border border-gray-200">
                         <span class="flex flex-row gap-1.5 place-items-center justify-between w-full">
@@ -278,7 +357,7 @@ function render_news(totalData) {
         background-blend-mode:darken;">
           <div class="flex flex-row justify-between w-full absolute place-items-center flex-wrap px-5">
             <p class="bg-gray-50 rounded-full px-2 py-1 place-items-center text-[11px]"><b>${newsItem.type}</b></p>
-            <img class="bg-gray-200 rounded-full p-1 my-3 hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+            <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
           </div>
           <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
             <div class="flex flex-row justify-around w-full place-items-center text-[10px]">
@@ -309,7 +388,6 @@ function render_news(totalData) {
       container.appendChild(newsElement);
     });
 }
-
 
 window.onload = function() {
 
