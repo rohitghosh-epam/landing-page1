@@ -1,0 +1,47 @@
+{
+    "destinations" : [
+        
+        {
+            "id": 1,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/1.png",
+            "heading": "Venice",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 2,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/2.png",
+            "heading": "Amsterdam",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 3,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/3.png",
+            "heading": "Budapest",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 4,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/4.png",
+            "heading": "Lisbon",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 5,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/5.png",
+            "heading": "London",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 6,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/6.png",
+            "heading": "Ottawa",
+            "subtext": "356 Tours, 248 Activities"
+        },
+        {
+            "id": 7,
+            "imageUrl": "../../assets/img/main/popular-destinations-cards/7.png",
+            "heading": "Paris",
+            "subtext": "356 Tours, 248 Activities"
+        }
+    ]
+}

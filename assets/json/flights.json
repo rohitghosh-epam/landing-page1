@@ -1,0 +1,82 @@
+{
+    "flight" : [
+        {
+            "id": 1,
+            "imageUrl": "../../assets/img/main/flights/1.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "Denmark",
+            "to": "New York",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$288.15",
+            "price2": "$288.15",
+            "seatsLeft": "18 seats left"
+        },
+        {
+            "id": 2,
+            "imageUrl": "../../assets/img/main/flights/2.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "Delhi",
+            "to": "New York",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$388.15",
+            "price2": "$388.15",
+            "seatsLeft": "12 seats left"
+        },
+        {
+            "id": 3,
+            "imageUrl": "../../assets/img/main/flights/3.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "Denmark",
+            "to": "Paris",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$188.15",
+            "price2": "$188.15",
+            "seatsLeft": "20 seats left"
+        },
+        {
+            "id": 4,
+            "imageUrl": "../../assets/img/main/flights/4.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "Kolkata",
+            "to": "New York",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$488.15",
+            "price2": "$488.15",
+            "seatsLeft": "18 seats left"
+        },
+        {
+            "id": 5,
+            "imageUrl": "../../assets/img/main/flights/5.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "Denmark",
+            "to": "Mumbai",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$388.15",
+            "price2": "$388.15",
+            "seatsLeft": "10 seats left"
+        },
+        {
+            "id": 6,
+            "imageUrl": "../../assets/img/main/flights/6.png",
+            "startDate": "09 Jun 2024",
+            "endDate": "09 Jun 2024",
+            "from": "London",
+            "to": "Beijing",
+            "subText1": "Business",
+            "subText2": "Business",
+            "price1": "$488.15",
+            "price2": "$488.15",
+            "seatsLeft": "18 seats left"
+        }
+    ]
+}

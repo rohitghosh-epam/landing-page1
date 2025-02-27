@@ -1,0 +1,37 @@
+{
+    "news" : [
+        {
+            "id": 1,
+            "backgroundImageUrl": "../../assets/img/main/news/news.png.png",
+            "type": "Cultural",
+            "date": "18 Sep 2024",
+            "time": "6 mins",
+            "comments": "38 comments",
+            "textHeading": "Ultimate Travel Planning Guide: 10 Tips for a Seamless Journey",
+            "userImageUrl": "../../assets/img/main/news/avatar.png.png",
+            "userName": "Jimmy Dave"
+        },
+        {
+            "id": 2,
+            "backgroundImageUrl": "../../assets/img/main/news/news2.png.png",
+            "type": "Travel",
+            "date": "18 Sep 2024",
+            "time": "6 mins",
+            "comments": "38 comments",
+            "textHeading": "Top 10 Travel Hacks for Budget-Conscious Adventurers",
+            "userImageUrl": "../../assets/img/main/news/avatar.png.png",
+            "userName": "Jimmy Dave"
+        },
+        {
+            "id": 3,
+            "backgroundImageUrl": "../../assets/img/main/news/news3.png.png",
+            "type": "Discovery",
+            "date": "18 Sep 2024",
+            "time": "6 mins",
+            "comments": "38 comments",
+            "textHeading": "Discovering Hidden Gems: 10 Off-the-Beaten-Path Travel Tips",
+            "userImageUrl": "../../assets/img/main/news/avatar.png.png",
+            "userName": "Jimmy Dave"
+        }
+    ]
+}

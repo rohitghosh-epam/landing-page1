@@ -1,0 +1,94 @@
+{
+    "tours": [
+        {
+            "id": 1,
+            "image_url": "../../assets/img/main/cards/1.png",
+            "heading": "Califonia Sunset/Twilight Boat Cruise",
+            "subtext": "7 days 6 nights - Small group",
+            "price": "$35.62",
+            "rating": "5.00",
+            "number_of_reviews": null
+        },
+        {
+            "id": 2,
+            "image_url": "../../assets/img/main/cards/2.png",
+            "heading": "Califonia Sunset/Twilight Boat Cruise",
+            "subtext": "2 days 3 nights - Family",
+            "price": "$48.25",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 3,
+            "image_url": "../../assets/img/main/cards/3.png",
+            "heading": "NYC: Food Tasting and Culture Tour",
+            "subtext": "3 days 3 nights - company",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 4,
+            "image_url": "../../assets/img/main/cards/4.png",
+            "heading": "Grand Canyo Horseshoe Bend 2 days",
+            "subtext": "7 days 6 nights - small group",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 5,
+            "image_url": "../../assets/img/main/cards/2.png",
+            "heading": "NYC: Food Tasting and Culture Tour",
+            "subtext": "3 days 3 nights - company",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 6,
+            "image_url": "../../assets/img/main/cards/1.png",
+            "heading": "Califonia Sunset/Twilight Boat Cruise",
+            "subtext": "7 days 6 nights - Small group",
+            "price": "$35.62",
+            "rating": "5.00",
+            "number_of_reviews": null
+        },
+        {
+            "id": 7,
+            "image_url": "../../assets/img/main/cards/2.png",
+            "heading": "Califonia Sunset/Twilight Boat Cruise",
+            "subtext": "2 days 3 nights - Family",
+            "price": "$48.25",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 8,
+            "image_url": "../../assets/img/main/cards/3.png",
+            "heading": "NYC: Food Tasting and Culture Tour",
+            "subtext": "3 days 3 nights - company",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 9,
+            "image_url": "../../assets/img/main/cards/4.png",
+            "heading": "Grand Canyo Horseshoe Bend 2 days",
+            "subtext": "7 days 6 nights - small group",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        },
+        {
+            "id": 10,
+            "image_url": "../../assets/img/main/cards/2.png",
+            "heading": "NYC: Food Tasting and Culture Tour",
+            "subtext": "3 days 3 nights - company",
+            "price": "$17.32",
+            "rating": "4.96",
+            "number_of_reviews": "672"
+        }
+    ]
+}
