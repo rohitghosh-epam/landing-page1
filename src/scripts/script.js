@@ -176,7 +176,7 @@ function render_hotels(totalData) {
   
     totalData.hotels.forEach(hotel => {
       const card = document.createElement('div');
-      card.className = 'card inline-block align-top rounded-2xl relative w-full transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
+      card.className = 'card w-90 inline-block align-top rounded-2xl relative w-full transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
       card.style.backgroundImage = `url('${hotel.imageUrl}')`;
       card.style.backgroundSize = '100% 80%';
       card.style.backgroundRepeat = 'no-repeat';
@@ -204,6 +204,42 @@ function render_hotels(totalData) {
           </div>
       `;
       container.appendChild(card);
+    });
+
+
+    const container2 = document.getElementById("hotels-hidden");
+    container2.innerHTML = '';
+  
+    totalData.hotels.forEach(hotel => {
+      const card = document.createElement('div');
+      card.className = 'card w-90 inline-block align-top rounded-2xl relative w-full transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
+      card.style.backgroundImage = `url('${hotel.imageUrl}')`;
+      card.style.backgroundSize = '100% 80%';
+      card.style.backgroundRepeat = 'no-repeat';
+      card.style.backgroundBlendMode = 'darken';
+      
+      card.innerHTML = `
+        <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+          <div class="w-full flex flex-row place-items-center justify-end px-3 md:bottom-32 absolute">
+            <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+              <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+              <p class="text-[11px]"><b>${hotel.rating}</b></p>
+              <p class="text-gray-600 text-[11px]">(${hotel.numberOfReviews} reviews)</p>
+            </div>
+          </div>
+          <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+            <p class="text-[15px] p-0"><b>${hotel.heading}</b></p>
+            <p class="text-[12px]">${hotel.subtext}</p>
+            <div class="flex flex-row place-items-center justify-between w-full">
+              <span class="flex flex-row place-items-center">
+                <p class="text-black text-[14px]"><b>${hotel.price}</b></p>
+                <p class="text-[12px]">/person</p>
+              </span>
+              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+            </div>
+          </div>
+      `;
+      container2.appendChild(card);
     });
   }
 
@@ -349,7 +385,7 @@ function render_news(totalData) {
   
     totalData.news.forEach(newsItem => {
       const newsElement = document.createElement('div');
-      newsElement.className = 'h-auto inline-block transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
+      newsElement.className = 'h-auto w-90 inline-block transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
       newsElement.innerHTML = `
         <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('${newsItem.backgroundImageUrl}');
         background-size: 100% 80%;
@@ -386,6 +422,51 @@ function render_news(totalData) {
         </div>
       `;
       container.appendChild(newsElement);
+    });
+
+
+    const container2 = document.getElementById("news-hidden");
+    container2.innerHTML = '';
+  
+    totalData.news.forEach(newsItem => {
+      const newsElement = document.createElement('div');
+      newsElement.className = 'h-auto w-90 inline-block transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl';
+      newsElement.innerHTML = `
+        <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('${newsItem.backgroundImageUrl}');
+        background-size: 100% 80%;
+        background-repeat: no-repeat;
+        background-blend-mode:darken;">
+          <div class="flex flex-row justify-between w-full absolute place-items-center flex-wrap px-5">
+            <p class="bg-gray-50 rounded-full px-2 py-1 place-items-center text-[11px]"><b>${newsItem.type}</b></p>
+            <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+          </div>
+          <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+            <div class="flex flex-row justify-around w-full place-items-center text-[10px]">
+              <span class="flex flex-row justify-around">
+                <img src="../../assets/img/main/news/calendar.png" alt="">
+                <p>${newsItem.date}</p>
+              </span>
+              <span class="flex flex-row justify-around place-items-center">
+                <img src="../../assets/img/main/news/time.png" alt="">
+                <p>${newsItem.time}</p>
+              </span>
+              <span class="flex flex-row justify-around place-items-center">
+                <img src="../../assets/img/main/news/comment.png" alt="">
+                <p>${newsItem.comments}</p>
+              </span>
+            </div>
+            <p class="text-[15px] p-0"><b>${newsItem.textHeading}</b></p>
+            <div class="flex flex-row place-items-center justify-between w-full">
+              <span class="flex flex-row place-items-center gap-1">
+                <img src="${newsItem.userImageUrl}" class="rounded-full" alt="">
+                <p class="text-[12px] text-black"><b>${newsItem.userName}</b></p>
+              </span>
+              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Keep Reading</b></button>
+            </div>
+          </div>
+        </div>
+      `;
+      container2.appendChild(newsElement);
     });
 }
 

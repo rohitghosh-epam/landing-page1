@@ -14,6 +14,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
+    <link rel="manifest" href="../../assets/json/manifest.json">
+    <link rel="apple-touch-icon" href="../scripts/serviceWorker.js">
+    <!-- <link rel="icon" href="./assets/logo512.png" type="image/png"> -->
+
+    <style>
+        .dropdown-content2 {
+            display: none; /* Initially hidden */
+            position: static;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content2.show2 {
+            display: block; /* Show content when active */
+        }
+        
+        .blur {
+            backdrop-filter: blur(8px);
+        }
+        .modal-hidden {
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body class="overflow-x-hidden">
@@ -106,7 +131,7 @@
                 <button class="flex flex-row gap-1 place-items-center bg-gray-200 px-3 rounded-full hover:cursor-pointer card hover:scale-110 transition-transform duration-300 ease-in-out">
                     <img class="size-5"src="../../assets/img/header/color.png" alt="">
                 </button>
-                <button class="flex flex-row gap-1 place-items-center border border-gray-400 py-2 px-3 rounded-full hover:cursor-pointer card hover:scale-110 transition-transform duration-300 ease-in-out">
+                <button id="signInButton" class="flex flex-row gap-1 place-items-center border border-gray-400 py-2 px-3 rounded-full hover:cursor-pointer card hover:scale-110 transition-transform duration-300 ease-in-out">
                     <p>Signin</p>
                 </button>
 
@@ -114,7 +139,7 @@
                     <img src="../../assets/img/header/menu.png" alt="Menu" class="h-8 w-8">
                 </button>
                 <div id="menuItems" class="hidden absolute border border-gray-400 right-0 mt-12 mr-2 w-30 bg-white rounded-lg shadow-md overflow-hidden z-10">
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:cursor-pointer">Log In</a>
+                    <a href="#" id="signInButton" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:cursor-pointer">Log In</a>
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:cursor-pointer">Sign Up</a>
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:cursor-pointer">Settings</a>
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:cursor-pointer">Support</a>
@@ -124,8 +149,37 @@
     </header>
     <!-- End Of Header Section -->
 
+    <!-- the sign in form -->
+    <div id="modal" class="modal-hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+        <div class="bg-white p-8 rounded-lg shadow-lg bg-gradient-to-br from-blue-100 to-blue-300">
+            <h2 class="text-2xl text-black mb-4">Sign In</h2>
+            <form id="signInForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Username
+                    </label>
+                    <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Sign In
+                    </button>
+                    <button type="button" id="closeModal" class="hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 text-sm text-blue-500 hover:text-blue-800">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- The Main Section -->
-    <main>
+    <main id="mainContent" >
 
         <!-- The search box -->
         <section class="border-b border-gray-200 pb-2">
@@ -167,8 +221,8 @@
                             </a>
                             <div id="categoriesDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
                                 <!-- Dropdown items -->
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">All</p>
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Exceptional</p>
                             </div>
                         </div>
 
@@ -217,8 +271,8 @@
                             </a>
                             <div id="languageDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
                                 <!-- Dropdown items -->
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">English</p>
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Hindi</p>
                             </div>
                         </div>
 
@@ -231,6 +285,7 @@
                         </a>
                     </div>
     
+                    
                 </div>
             </div>
         </section>
@@ -274,58 +329,55 @@
                         <p class="text-gray-400 ">Favourite destinations based on customer reviews</p>
                     </div>
 
-                    <div class="flex flex-col lg:flex-row gap-3">
-                        <div class="dropdown-container relative">
-                            <a class="bg-gray-200 rounded-full flex flex-row hover:cursor-pointer place-items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px] card hover:scale-110 transition-transform duration-300 ease-in-out" onclick="toggleDropdown(event, 'categoriesDropdown')">
-                                <p>Catigories</p>
-                                <img class="size-2" src="../../assets/img/header/dropdown-arrow.png" alt="">                    
+                    <div class="flex flex-col lg:flex-row gap-5 p-5">
+                        <!-- Categories Dropdown -->
+                        <div class="dropdown-container2 relative">
+                            <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
+                                <p>Categories</p>
+                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div id="categoriesDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
-                                <!-- Dropdown items -->
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
-                                <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
+                            <div class="dropdown-content2 text-[12px]">
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Premium</p>
+                                <p class="p-2 hover:bg-gray-100 cursor-pointer">Economy</p>
                             </div>
                         </div>
-
-                        <div class="dropdown-container relative">
-                            <a class="bg-gray-200 rounded-full flex flex-row hover:cursor-pointer place-items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px] card hover:scale-110 transition-transform duration-300 ease-in-out" onclick="toggleDropdown(event, 'durationDropdown')">
+                
+                        <!-- Duration Dropdown -->
+                        <div class="dropdown-container2 relative">
+                            <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Duration</p>
-                                <img class="size-2" src="../../assets/img/header/dropdown-arrow.png" alt="">
+                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div id="durationDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
-                                <!-- Dropdown items -->
+                            <div class="dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
                         </div>
-                        
-                        <div class="dropdown-container relative">
-                            <a class="bg-gray-200 rounded-full flex flex-row hover:cursor-pointer place-items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px] card hover:scale-110 transition-transform duration-300 ease-in-out" onclick="toggleDropdown(event, 'reviewDropdown')">
+                
+                        <!-- Review/Rating Dropdown -->
+                        <div class="dropdown-container2 relative">
+                            <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Review / Rating</p>
-                                <img class="size-2" src="../../assets/img/header/dropdown-arrow.png" alt="">
+                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div id="reviewDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
-                                <!-- Dropdown items -->
+                            <div class="dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
-                            
                         </div>
-
-                        <div class="dropdown-container relative">
-                            <a class="bg-gray-200 rounded-full flex flex-row hover:cursor-pointer place-items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px] card hover:scale-110 transition-transform duration-300 ease-in-out" onclick="toggleDropdown(event, 'priceDropdown')">
-                                <p>Price range</p>
-                                <img class="size-2" src="../../assets/img/header/dropdown-arrow.png" alt="">
+                
+                        <!-- Price Range Dropdown -->
+                        <div class="dropdown-container2 relative">
+                            <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
+                                <p>Price Range</p>
+                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div id="priceDropdown" class="hidden absolute bg-white shadow-lg rounded-md mt-2 p-2 w-30 text-[11px]">
-                                <!-- Dropdown items -->
+                            <div class="dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
-                            
                         </div>
-
-                    </div> 
+                    </div>
                 </div>
 
                 <div id="destinations" class="my-7 w-full grid grid-cols-1 place-items-center gap-3 xl:pl-30 md:grid-cols-2 lg:grid-cols-4 md:space-x-5 md:space-y-5">
@@ -357,6 +409,12 @@
             
                 <div id="hotels" class="w-full flex flex-col place-items-center md:items-start md:grid md:px-5 xl:px-10 md:grid-cols-2 lg:grid-cols-4 space-y-5 lg:gap-5 xl:gap-10">
                 
+                </div>
+
+                <div id="hotels-hidden" class="hidden">
+                    <div class="w-full flex flex-row place-items-center md:items-start md:grid md:px-5 xl:px-10 md:grid-cols-2 lg:grid-cols-4 space-y-5 lg:gap-5 xl:gap-10">
+                    
+                    </div>
                 </div>
             
             </div>
@@ -569,6 +627,12 @@
                     
                 </div>
 
+                <div id="news-hidden" class="hidden">
+                    <div class="grid gap-10 md:grid-cols-3 md:space-x-5 space-y-5">
+                        
+                    </div>
+                </div>
+
             </div>
         </section>
         <!-- End of News,tip and Guides section -->
@@ -613,6 +677,19 @@
             <img src="../../assets/img/main/Image+Background.png" alt="">
         </section>
         <!-- End Bottom Image -->
+
+        <!-- Chatbot -->
+        <section>
+            <!-- Button with custom gradient -->
+            <button id="chatbotButton" class="fixed hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 bottom-5 right-5 bg-gradient-to-r bg-white font-bold rounded-full focus:outline-none shadow-lg z-50">
+                <img class="rounded-full size-12" src="../../assets/img/main/chat.png" alt="">
+            </button>
+
+            <!-- Chatbot iframe initially hidden -->
+            <div id="chatbotContainer" class="fixed bottom-5 right-5 w-100 h-150 border-none rounded-lg shadow-lg transition-all duration-500 transform scale-0 origin-bottom-right z-40" style="background: linear-gradient(to bottom right, #6ee7b7, #3b82f6);">
+                <iframe src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/28/04/20250228044530-PJGWPOGC.json" class="w-full h-full rounded-lg"></iframe>
+            </div>
+        </section>
 
     </main>
     <!-- End of the Main Section -->
@@ -711,6 +788,34 @@
 
     <!-- JSON Content rendering script -->
     <script src="../scripts/script.js"></script>
+
+    <!-- The script for rendering the signup form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signInButton = document.getElementById('signInButton');
+            const modal = document.getElementById('modal');
+            const mainContent = document.getElementById('mainContent');
+            const closeModal = document.getElementById('closeModal');
+
+            // Function to toggle modal visibility and blur effect
+            signInButton.addEventListener('click', () => {
+                modal.classList.toggle('modal-hidden'); // Show or hide the modal
+                mainContent.classList.toggle('blur'); // Apply or remove blur effect
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.add('modal-hidden'); // Hide the modal
+                mainContent.classList.remove('blur'); // Remove blur from main content
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == modal) {
+                    modal.classList.add('modal-hidden'); // Hide the modal
+                    mainContent.classList.remove('blur'); // Remove blur effect
+                }
+            });
+        });
+    </script>
 
     <!-- Script for the Hamburger Menu -->
     <script>
@@ -816,6 +921,91 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
      </script>
+
+     <!-- script for viewing and hiding the hidden divs -->
+     <script>
+        document.getElementById("hidden-btn1").addEventListener("click", function() {
+            var hiddenDiv = document.getElementById("hotels-hidden");
+            var buttonText = document.querySelector("#hidden-btn1 p");
+    
+            if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
+                hiddenDiv.style.display = "block";
+                buttonText.textContent = "View Less"; // Change the button text to View Less
+            } else {
+                hiddenDiv.style.display = "none";
+                buttonText.textContent = "View More"; // Change the button text to View More
+            }
+        });
+
+        document.getElementById("hidden-btn2").addEventListener("click", function() {
+            var hiddenDiv = document.getElementById("news-hidden");
+            var buttonText = document.querySelector("#hidden-btn2 p");
+    
+            if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
+                hiddenDiv.style.display = "block";
+                buttonText.textContent = "View Less"; // Change the button text to View Less
+            } else {
+                hiddenDiv.style.display = "none";
+                buttonText.textContent = "View More"; // Change the button text to View More
+            }
+        });
+    </script>
+
+    <!-- script for dropdown menus -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const containers = document.querySelectorAll('.dropdown-container2');
+            containers.forEach(container => {
+                const a = container.querySelector('a');
+                a.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the default link behavior
+                    const currentlyShowing = container.querySelector('.dropdown-content2.show2');
+                    
+                    // First close any open dropdowns
+                    document.querySelectorAll('.dropdown-content2.show2').forEach((content) => {
+                        if (content !== currentlyShowing) {
+                            content.classList.remove('show2');
+                        }
+                    });
+                    
+                    // Toggle the current dropdown
+                    const content = container.querySelector('.dropdown-content2');
+                    content.classList.toggle('show2');
+                })
+            });
+
+            // Clicking outside closes all dropdowns
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.dropdown-container2')) {
+                    document.querySelectorAll('.dropdown-content2').forEach((content) => {
+                        content.classList.remove('show2');
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Script for chatbot -->
+    <script>
+        const chatbotButton = document.getElementById('chatbotButton');
+        const chatbotContainer = document.getElementById('chatbotContainer');
+
+        chatbotButton.addEventListener('click', (e) => {
+            // Prevents the document-wide click event from firing
+            e.stopPropagation(); 
+
+            // Toggle visibility
+            chatbotContainer.classList.toggle('scale-0');
+        });
+
+        // Hide chatbot if clicked anywhere else on the document
+        document.addEventListener('click', () => {
+            if (!chatbotContainer.classList.contains('scale-0')) {
+                chatbotContainer.classList.add('scale-0');
+            }
+        });
+    </script>
+    
 </body>
 
 </html>
