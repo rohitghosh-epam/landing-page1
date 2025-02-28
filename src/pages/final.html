@@ -150,8 +150,8 @@
     <!-- End Of Header Section -->
 
     <!-- the sign in form -->
-    <div id="modal" class="modal-hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
-        <div class="bg-white p-8 rounded-lg shadow-lg bg-gradient-to-br from-blue-100 to-blue-300">
+    <div id="modal" class="modal-hidden fixed inset-0  bg-opacity-10 flex items-center justify-center z-10">
+        <div class="bg-gray-200 p-8 rounded-lg shadow-lg bg-gradient-to-br">
             <h2 class="text-2xl text-black mb-4">Sign In</h2>
             <form id="signInForm">
                 <div class="mb-4">
@@ -178,6 +178,43 @@
         </div>
     </div>
 
+    <!-- Thank you Pop Up -->
+    <div id="popup" class="hidden">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2  bg-opacity-10 z-10">
+            <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
+                BOOKED! Thank You!
+                <button onclick="togglePopup(false)" class="w-20 mt-4 p-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Correct Email Pop Up -->
+    <div id="correct-email-popup" class="hidden">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10">
+            <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
+                Thank You for your Email! We will get in touch with you soon!
+                <button onclick="hidePopups()" class="w-20 mt-4 p-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wrong Email Pop Up -->
+    <div id="error-email-popup" class="hidden">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10">
+            <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
+                Incorrect Email Address!!
+                <button onclick="hidePopups()" class="w-20 mt-4 p-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
     <!-- The Main Section -->
     <main id="mainContent" >
 
@@ -196,7 +233,7 @@
                     <div class="hidden md:bg-gray-200 md:flex md:flex-row md:rounded-l-full md:w-full md:py-3 md:px-3 md:gap-1">
                         <img src="../../assets/img/main/search.png" alt="">
                         <label for="search"></label>
-                        <input class="w-full" type="text" class="outline-none border-none" placeholder="What are you looking for?">
+                        <input class="w-full outline-none" type="text" class="outline-none border-none" placeholder="What are you looking for?">
                     </div>
     
                     <div class="hidden md:flex md:flex-row md:justify-evenly md:place-items-center md:place-content-center text-black w-full py-3 md:px-3 xl:px-0 text-[12px]">
@@ -331,48 +368,48 @@
 
                     <div class="flex flex-col lg:flex-row gap-5 p-5">
                         <!-- Categories Dropdown -->
-                        <div class="dropdown-container2 relative">
+                        <div class="dropdown-container2 relative transition-all duration-300 ease-in-out transform hover:scale-110">
                             <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Categories</p>
-                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
+                                <img class="w-2 h-2" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div class="dropdown-content2 text-[12px]">
+                            <div class="mt-2 dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Premium</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Economy</p>
                             </div>
                         </div>
                 
                         <!-- Duration Dropdown -->
-                        <div class="dropdown-container2 relative">
+                        <div class="dropdown-container2 relative transition-all duration-300 ease-in-out transform hover:scale-110">
                             <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Duration</p>
-                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
+                                <img class="w-2 h-2" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div class="dropdown-content2 text-[12px]">
+                            <div class="mt-2 dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
                         </div>
                 
                         <!-- Review/Rating Dropdown -->
-                        <div class="dropdown-container2 relative">
+                        <div class="dropdown-container2 relative transition-all duration-300 ease-in-out transform hover:scale-110">
                             <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Review / Rating</p>
-                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
+                                <img class="w-2 h-2" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div class="dropdown-content2 text-[12px]">
+                            <div class="mt-2 dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
                         </div>
                 
                         <!-- Price Range Dropdown -->
-                        <div class="dropdown-container2 relative">
+                        <div class="dropdown-container2 relative transition-all duration-300 ease-in-out transform hover:scale-110">
                             <a class="bg-gray-200 rounded-full flex cursor-pointer scale-110 transition-transform duration-300 ease-in-out items-center gap-1 p-2 lg:px-3 lg:py-2 text-[12px]" href="javascript:void(0)">
                                 <p>Price Range</p>
-                                <img class="w-4 h-4" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
+                                <img class="w-2 h-2" src="../../assets/img/header/dropdown-arrow.png" alt="Dropdown">
                             </a>
-                            <div class="dropdown-content2 text-[12px]">
+                            <div class="mt-2 dropdown-content2 text-[12px]">
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">Low to High</p>
                                 <p class="p-2 hover:bg-gray-100 cursor-pointer">High to Low</p>
                             </div>
@@ -411,8 +448,8 @@
                 
                 </div>
 
-                <div id="hotels-hidden" class="hidden">
-                    <div class="w-full flex flex-row place-items-center md:items-start md:grid md:px-5 xl:px-10 md:grid-cols-2 lg:grid-cols-4 space-y-5 lg:gap-5 xl:gap-10">
+                <div id="show-hotels" class="hidden">
+                    <div id="hotels-hidden" class="flex flex-row place-items-center md:items-start md:grid md:px-5 xl:px-10 md:grid-cols-2 lg:grid-cols-4 space-y-5 lg:gap-5 xl:gap-10">
                     
                     </div>
                 </div>
@@ -627,8 +664,8 @@
                     
                 </div>
 
-                <div id="news-hidden" class="hidden">
-                    <div class="grid gap-10 md:grid-cols-3 md:space-x-5 space-y-5">
+                <div id="show-news" class="hidden">
+                    <div id="news-hidden" class="grid md:grid-cols-3 md:space-x-5 space-y-5">
                         
                     </div>
                 </div>
@@ -650,16 +687,16 @@
                         prices drop the moment you sign 
                         up! </b></p>
 
-                    <div class="bg-white flex flex-row justify-between pl-4 rounded-full w-100">
-                        <span class="place-items-center h-full">
-                            <label for="email"></label>
-                            <input class="outline-hidden h-full" type="email" placeholder="Your Email">
-                        </span>
-
-                        <button class="bg-black h-full rounded-full text-white text-[12px] px-5 py-4 hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110">
-                            Subscribe
-                        </button>
-                    </div>
+                        <div class="bg-white flex flex-row justify-between pl-4 rounded-full w-100">
+                            <span class="place-items-center h-full text-black">
+                                <label for="email"></label>
+                                <input id="email" class="outline-hidden h-full" type="email" placeholder="Your Email">
+                            </span>
+    
+                            <button onclick="validateEmail()" class="bg-black h-full rounded-full text-white text-[12px] px-5 py-4 hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110">
+                                Subscribe
+                            </button>
+                        </div>
 
                     <p class="text-gray-400 text-[12px]">No ads. No trails. No commitments</p>
 
@@ -911,7 +948,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     </script>
 
-    <!-- The script for chnaging the like button color -->
+    <!-- The script for changing the like button color -->
      <script>
         function toggleHeartColor(img) {
             if (img.src.endsWith("assets/img/main/cards/heart.png")) {
@@ -925,7 +962,7 @@ document.addEventListener("DOMContentLoaded", function() {
      <!-- script for viewing and hiding the hidden divs -->
      <script>
         document.getElementById("hidden-btn1").addEventListener("click", function() {
-            var hiddenDiv = document.getElementById("hotels-hidden");
+            var hiddenDiv = document.getElementById("show-hotels");
             var buttonText = document.querySelector("#hidden-btn1 p");
     
             if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
@@ -938,7 +975,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         document.getElementById("hidden-btn2").addEventListener("click", function() {
-            var hiddenDiv = document.getElementById("news-hidden");
+            var hiddenDiv = document.getElementById("show-news");
             var buttonText = document.querySelector("#hidden-btn2 p");
     
             if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
@@ -1004,6 +1041,57 @@ document.addEventListener("DOMContentLoaded", function() {
                 chatbotContainer.classList.add('scale-0');
             }
         });
+    </script>
+
+    <!-- Thank you button functionality -->
+    <script>
+        function togglePopup(show) {
+            const popup = document.getElementById('popup');
+            const body = document.getElementById("mainContent");
+
+            if (show) {
+                popup.classList.remove('hidden');
+                body.classList.add('blur');
+            } else {
+                popup.classList.add('hidden');
+                body.classList.remove('blur');
+            }
+        }
+
+        // Hide popup when clicking outside of it
+        window.onclick = function(event) {
+            const popup = document.getElementById('popup');
+            if (event.target === popup) {
+                togglePopup(false);
+            }
+        }
+    </script>
+
+    <!-- Validating Email id -->
+    <script>
+        function validateEmail() {
+            const body = document.getElementById("mainContent");
+            var email = document.getElementById('email').value;
+            const isEmailValid = /^\S+@\S+\.\S+$/.test(email);
+    
+            body.classList.add('blur');
+            document.getElementById('correct-email-popup').classList.toggle('hidden', !isEmailValid);
+            document.getElementById('error-email-popup').classList.toggle('hidden', isEmailValid);
+        }
+    
+        function hidePopups() {
+            const body = document.getElementById("mainContent");
+            body.classList.remove('blur');
+            document.getElementById('correct-email-popup').classList.add('hidden');
+            document.getElementById('error-email-popup').classList.add('hidden');
+            location.reload();
+        }
+    
+        window.onclick = function(event) {
+            if (event.target.className.includes('fixed')) {
+                hidePopups();
+            }
+        }
     </script>
     
 </body>

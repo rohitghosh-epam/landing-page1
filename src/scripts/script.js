@@ -108,7 +108,7 @@ function render_packages(totalData) {
                     <p class="text-black text-[14px]"><b>${data.price}</b></p>
                     <p class="text-[12px]">/person</p>
                 </span>
-                <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                <button onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
             </div>
         </div>
     </div>
@@ -199,7 +199,7 @@ function render_hotels(totalData) {
                 <p class="text-black text-[14px]"><b>${hotel.price}</b></p>
                 <p class="text-[12px]">/person</p>
               </span>
-              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+              <button onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
             </div>
           </div>
       `;
@@ -351,7 +351,7 @@ function render_testimonials(totalData) {
 
     totalData.testimonials.forEach(testimonial => {
         const testimonialElement = document.createElement('div');
-        testimonialElement.className = 'bg-white rounded-2xl w-70 h-75 flex flex-col py-4 px-5 hover:shadow-2xl';
+        testimonialElement.className = 'bg-white rounded-2xl w-70 h-75 flex flex-col py-4 px-5 transition-all duration-300 ease-in-out transform hover:scale-110';
         testimonialElement.innerHTML = `
             <div class="flex flex-row px-4 py-5 border-b border-gray-200 justify-between place-items-center">
                 <span class="flex flex-row gap-2 place-items-center">
