@@ -34,7 +34,7 @@ function render_packages(totalData) {
                                         <p class="text-[12px]">/person</p>
                                     </span>
                                     
-                                    <div class="absolute bottom-10 md:bottom-0 right-4 text-gray-400">
+                                    <div class="absolute bottom-10 md:bottom-0 right-4 text-gray-600">
                                         <div class="flex space-x-2">
                                             <div class="flex flex-col items-center">
                                                 <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="day"></span>
@@ -105,10 +105,10 @@ function render_packages(totalData) {
             <p class="text-[12px]">${data.subtext}</p>
             <div class="flex flex-row place-items-center justify-between w-full">
                 <span class="flex flex-row place-items-center">
-                    <p class="text-black text-[14px]"><b>${data.price}</b></p>
+                    <p class="text-black text-[14px]"><b>$${data.price}</b></p>
                     <p class="text-[12px]">/person</p>
                 </span>
-                <button onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                <button aria-label="btn" onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
             </div>
         </div>
     </div>
@@ -134,9 +134,9 @@ function render_destinations(totalData) {
             <div class="flex flex-col  my-2">
                 <p><b>${data.heading}</b></p>
                 <span class="flex flex-row justify-between w-full">
-                    <p class="text-gray-400 text-[12px]">${data.subtext}</p>
-                    <button class="bg-gray-200 rounded-full hover:cursor-pointer">
-                        <img class="p-2" src="../../assets/img/main/right-arrow.png" alt="">
+                    <p class="text-gray-600 text-[12px]">${data.subtext}</p>
+                    <button aria-label="btn" type="button" name="arrow" class="bg-gray-200 rounded-full hover:cursor-pointer">
+                        <img class="p-2" src="../../assets/img/main/right-arrow.png" alt="arrow">
                     </button>
                 </span>
             </div>
@@ -151,13 +151,13 @@ function render_destinations(totalData) {
   card.innerHTML = `
     <div class="container w-60">
         <div class="flex flex-col rounded-2xl border border-gray-200 bg-gray-400 p-3 gap-3">
-            <h1 class="text-gray-300 text-[22px] px-2"><b>Crafting Your Perfect Travel Experience</b></h1>
+            <h1 class="text-white text-[22px] px-2"><b>Crafting Your Perfect Travel Experience</b></h1>
             <div class="flex flex-row place-items-center justify-between bg-black rounded-2xl px-4">
                 <div class="flex- flex-col text-white text-[13px] py-2">
                     <p>Browse</p>
                     <p>All destinations</p>
                 </div>
-                <button class="bg-white rounded-full hover:cursor-pointer">
+                <button aria-label="btn" class="bg-white rounded-full hover:cursor-pointer">
                     <img class="p-2" src="../../assets/img/main/right-arrow.png" alt="">
                 </button>
             </div>
@@ -199,7 +199,7 @@ function render_hotels(totalData) {
                 <p class="text-black text-[14px]"><b>${hotel.price}</b></p>
                 <p class="text-[12px]">/person</p>
               </span>
-              <button onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+              <button aria-label="btn" onclick="togglePopup(true)" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
             </div>
           </div>
       `;
@@ -235,13 +235,13 @@ function render_hotels(totalData) {
                 <p class="text-black text-[14px]"><b>${hotel.price}</b></p>
                 <p class="text-[12px]">/person</p>
               </span>
-              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+              <button aria-label="btn" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
             </div>
           </div>
       `;
       container2.appendChild(card);
     });
-  }
+}
 
 //Rendering Flights Data
 function render_flights(totalData) {
@@ -262,10 +262,10 @@ function render_flights(totalData) {
                     <div class="bg-white px-4 h-full w-65 flex flex-col place-items-start justify-between flex-wrap rounded-2xl p-5 border border-gray-200">
                         <span class="flex flex-row gap-1.5 place-items-center justify-between w-full">
                             <img src="../../assets/img/main/flights/clock.png" alt="">
-                            <p class="text-gray-400 text-[15px]">${flight.startDate}</p>
+                            <p class="text-gray-700 text-[15px]">${flight.startDate}</p>
                             <img src="../../assets/img/main/flights/vertical-divider.png" alt="">
                             <img src="../../assets/img/main/flights/clock.png" alt="">
-                            <p class="text-gray-400 text-[15px]">${flight.endDate}</p>
+                            <p class="text-gray-700 text-[15px]">${flight.endDate}</p>
                         </span>
                         <span class="flex flex-row place-items-center justify-between w-full">
                             <p class="text-black text-[16px]"><b>${flight.from}</b></p>
@@ -274,18 +274,18 @@ function render_flights(totalData) {
                         </span>
                         <span class="flex flex-row place-items-center justify-between w-full">
                             <div>   
-                                <p class="text-gray-400 text-[11px]">${flight.subText1}</p>
+                                <p class="text-gray-700 text-[11px]">${flight.subText1}</p>
                                 <p class="text-black text-[16px]"><b>${flight.price1}</b></p>
                             </div>
                             <img src="../../assets/img/main/flights/horizontal-divider.png" alt="">
                             <div>
-                                <p class="text-gray-400 text-[11px]">${flight.subText2}</p>
+                                <p class="text-gray-700 text-[11px]">${flight.subText2}</p>
                                 <p class="text-black text-[16px]"><b>${flight.price2}</b></p>
                             </div>
                         </span>
                         <span class="flex flex-row place-items-center justify-between w-full">
-                            <p class="text-gray-400 text-[11px]">${flight.seatsLeft}</p>
-                            <button class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            <p class="text-gray-700 text-[11px]">${flight.seatsLeft}</p>
+                            <button aria-label="btn" class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
                         </span>
                     </div>
                 </div>
@@ -334,7 +334,7 @@ function render_flights(totalData) {
                         </span>
                         <span class="flex flex-row place-items-center justify-between w-full">
                             <p class="text-gray-400 text-[11px]">${flight.seatsLeft}</p>
-                            <button class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            <button aria-label="btn" class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
                         </span>
                     </div>
                 </div>
@@ -372,7 +372,7 @@ function render_testimonials(totalData) {
                     </span>
                 </div>
             </div>
-            <p class="text-gray-400 text-[12px] py-4 px-4">${testimonial.text}</p>
+            <p class="text-gray-600 text-[12px] py-4 px-4">${testimonial.text}</p>
         `;
         container.appendChild(testimonialElement);
     });
@@ -416,7 +416,7 @@ function render_news(totalData) {
                 <img src="${newsItem.userImageUrl}" class="rounded-full" alt="">
                 <p class="text-[12px] text-black"><b>${newsItem.userName}</b></p>
               </span>
-              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Keep Reading</b></button>
+              <button aria-label="btn" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Keep Reading</b></button>
             </div>
           </div>
         </div>
@@ -461,7 +461,7 @@ function render_news(totalData) {
                 <img src="${newsItem.userImageUrl}" class="rounded-full" alt="">
                 <p class="text-[12px] text-black"><b>${newsItem.userName}</b></p>
               </span>
-              <button class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Keep Reading</b></button>
+              <button aria-label="btn" class="px-2 py-1 text-[13px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Keep Reading</b></button>
             </div>
           </div>
         </div>
@@ -470,6 +470,7 @@ function render_news(totalData) {
     });
 }
 
+//Rendering when the page is refreshing
 window.onload = function() {
 
     //fetching packages data
@@ -587,3 +588,155 @@ window.onload = function() {
         });
 
 }
+
+// Packages Section is sorted
+
+//Only Exceptional Category is Displayed
+function render_packages_category() {
+    let container = document.getElementById("packages");
+    container.innerHTML = '';
+
+    const firstCard = document.createElement('div');
+    firstCard.className = 'h-auto w-90 inline-block transition-all duration-300 ease-in-out transform hover:scale-110';
+    firstCard.innerHTML = `
+                        <div class="card inline-block align-top rounded-2xl relative w-full" style="background-image: url('../../assets/img/main/cards/1.png');
+                        background-size: 100% 80%;
+                        background-repeat: no-repeat;
+                        background-blend-mode:darken;">
+                            <img onclick="toggleHeartColor(this)" class="bg-gray-200 rounded-full p-1 my-3 right-3 absolute hover:cursor-pointer size-5" src="../../assets/img/main/cards/heart.png" alt="">
+                            <div class="w-full flex flex-row place-items-center justify-between px-7 bottom-33 absolute">
+                                <div class="bg-yellow-300 px-2 py-1.5 flex place-items-center rounded-full gap-1 text-[11px]">
+                                    <img src="../../assets/img/main/cards/thunder.png" alt="">
+                                    <p><b> Exceptional </b></p>
+                                </div>
+                                <div class="bg-white flex flex-row place-items-center gap-1 rounded-full px-2 py-1.5">
+                                    <img class="size-3" src="../../assets/img/main/cards/star.png" alt="">
+                                    <p class="text-[11px]"><b>5.00</b></p>
+                                </div>
+                            </div>
+                            <div class="bg-white flex flex-col place-items-start gap-2 flex-wrap rounded-2xl mt-51 p-5 border border-gray-200">
+                                <p class="text-[15px] p-0"><b>Califonia Sunset/Twilight Boat Cruise</b></p>
+                                <div class="flex flex-row justify-between w-full place-items-center">
+                                    <p class="text-[12px]">7 days 6 nights - Small group</p>
+                                    <p class="text-black text-[11px]">Promotion will end in</p>
+                                </div>
+                                <div class="flex flex-row place-items-center justify-between pt-2 w-full">
+                                    <span class="flex flex-row place-items-center">
+                                        <p class="text-black text-[14px]"><b>$35.62</b></p>
+                                        <p class="text-[12px]">/person</p>
+                                    </span>
+                                    
+                                    <div class="absolute bottom-10 md:bottom-0 right-4 text-gray-400">
+                                        <div class="flex space-x-2">
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="day"></span>
+                                                <p class="text-xs mt-1">Days</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="hour"></span>
+                                                <p class="text-xs mt-1">Hours</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="min"></span>
+                                                <p class="text-xs mt-1">Mins</p>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <span class="font-bold text-black text-[15px] bg-gray-200 px-3 py-1 rounded-md shadow-md" id="sec"></span>
+                                                <p class="text-xs mt-1">Secs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+    container.appendChild(firstCard);
+}
+
+//Sorting the Data wrt Duration
+function render_packages_duration(high) {
+
+    // Fetching Destinations Data
+    fetch('../../assets/json/packages.json')
+        .then(response => {
+            // Check if the request is successful
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();  // Parse the response as JSON
+        })
+        .then(data => {
+            console.log('Data fetched successfully:', data);
+            
+            if(high) {
+                data.tours.sort((a, b) => b.duration - a.duration);
+            }
+            else {
+                data.tours.sort((a, b) => a.duration - b.duration);
+            }
+            render_packages(data);
+        })
+        .catch(error => {
+            // Handle any errors in fetching or processing data
+            console.error('Error fetching data:', error);
+        });
+} 
+
+//Sorting the Data wtr Duration
+function render_packages_review(high) {
+
+    // Fetching Destinations Data
+    fetch('../../assets/json/packages.json')
+        .then(response => {
+            // Check if the request is successful
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();  // Parse the response as JSON
+        })
+        .then(data => {
+            console.log('Data fetched successfully:', data);
+            
+            if(high) {
+                data.tours.sort((a, b) => b.rating - a.rating);
+            }
+            else {
+                data.tours.sort((a, b) => a.rating - b.rating);
+            }
+            render_packages(data);
+        })
+        .catch(error => {
+            // Handle any errors in fetching or processing data
+            console.error('Error fetching data:', error);
+        });
+} 
+
+//Sorting the Data wtr Duration
+function render_packages_price(high) {
+
+    // Fetching Destinations Data
+    fetch('../../assets/json/packages.json')
+        .then(response => {
+            // Check if the request is successful
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();  // Parse the response as JSON
+        })
+        .then(data => {
+            console.log('Data fetched successfully:', data);
+            
+            if(high) {
+                data.tours.sort((a, b) => b.price - a.price);
+            }
+            else {
+                data.tours.sort((a, b) => a.price - b.price);
+            }
+            render_packages(data);
+        })
+        .catch(error => {
+            // Handle any errors in fetching or processing data
+            console.error('Error fetching data:', error);
+        });
+} 
