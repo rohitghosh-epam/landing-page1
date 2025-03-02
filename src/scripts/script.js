@@ -285,7 +285,7 @@ function render_flights(totalData) {
                         </span>
                         <span class="flex flex-row place-items-center justify-between w-full">
                             <p class="text-gray-700 text-[11px]">${flight.seatsLeft}</p>
-                            <button aria-label="btn" class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
+                            <button onclick="togglePopup(true)" aria-label="btn" class="px-2 py-1 text-[11px] bg-gray-200 rounded-full hover:cursor-pointer"><b>Book Now</b></button>
                         </span>
                     </div>
                 </div>

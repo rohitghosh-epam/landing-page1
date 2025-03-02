@@ -8,14 +8,13 @@
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-red-700: oklch(0.505 0.213 27.518);
+    --color-red-800: oklch(0.444 0.177 26.899);
     --color-orange-400: oklch(0.75 0.183 55.934);
     --color-yellow-300: oklch(0.905 0.182 98.111);
     --color-green-400: oklch(0.792 0.209 151.711);
     --color-green-500: oklch(0.723 0.219 149.579);
     --color-green-600: oklch(0.627 0.194 149.214);
     --color-green-700: oklch(0.527 0.154 150.069);
-    --color-blue-500: oklch(0.623 0.214 259.815);
-    --color-blue-800: oklch(0.424 0.199 265.638);
     --color-gray-50: oklch(0.985 0.002 247.839);
     --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-200: oklch(0.928 0.006 264.531);
@@ -674,6 +673,15 @@
   .border-gray-600 {
     border-color: var(--color-gray-600);
   }
+  .border-green-400 {
+    border-color: var(--color-green-400);
+  }
+  .border-green-500 {
+    border-color: var(--color-green-500);
+  }
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
   .bg-\[\#E3F0FF\] {
     background-color: #E3F0FF;
   }
@@ -913,9 +921,6 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
   .text-gray-300 {
     color: var(--color-gray-300);
   }
@@ -930,6 +935,9 @@
   }
   .text-orange-400 {
     color: var(--color-orange-400);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
   }
   .text-white {
     color: var(--color-white);
@@ -1061,10 +1069,10 @@
       }
     }
   }
-  .hover\:text-blue-800 {
+  .hover\:text-red-800 {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-blue-800);
+        color: var(--color-red-800);
       }
     }
   }

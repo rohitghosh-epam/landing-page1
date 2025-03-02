@@ -153,7 +153,7 @@
 
     <!-- The Sign in Form -->
     <div id="modal" class="modal-hidden fixed inset-0  bg-opacity-10 flex items-center justify-center z-10">
-        <div class="bg-gray-200 p-8 rounded-lg shadow-lg bg-gradient-to-br">
+        <div class="bg-gray-200 p-8 rounded-lg shadow-lg bg-gradient-to-br border border-green-400">
             <h2 class="text-2xl text-black mb-4">Sign In</h2>
             <form id="signInForm">
                 <div class="mb-4">
@@ -172,7 +172,7 @@
                     <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" type="submit" class="hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Sign In
                     </button>
-                    <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" type="button" id="closeModal" class="hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 text-sm text-blue-500 hover:text-blue-800">
+                    <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" type="button" id="closeModal" class="hover:cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 text-sm text-red-500 hover:text-red-800">
                         Cancel
                     </button>
                 </div>
@@ -182,7 +182,7 @@
 
     <!-- Thank You Pop Up -->
     <div id="popup" class="hidden">
-        <div class="fixed w-full top-50 flex items-end justify-center p-2  bg-opacity-10 z-10">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2  bg-opacity-10 z-10 border-green-500">
             <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
                 BOOKED! Thank You!
                 <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" onclick="togglePopup(false)" class="w-20 mt-4 p-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
@@ -194,7 +194,7 @@
 
     <!-- Correct Email Pop Up -->
     <div id="correct-email-popup" class="hidden">
-        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10 border-green-500">
             <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
                 Thank You for your Email! We will get in touch with you soon!
                 <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" onclick="hidePopups()" class="w-20 mt-4 p-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
@@ -206,7 +206,7 @@
     
     <!-- Wrong Email Pop Up -->
     <div id="error-email-popup" class="hidden">
-        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10">
+        <div class="fixed w-full top-50 flex items-end justify-center p-2 bg-opacity-10 z-10 border-red-500">
             <div class="w-full flex flex-col place-items-center max-w-lg p-5 rounded-2xl bg-gray-200 text-black text-center shadow-lg">
                 Incorrect Email Address!!
                 <button aria-label="btn" aria-label="btn" aria-label="btn" aria-label="btn" onclick="hidePopups()" class="w-20 mt-4 p-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded">
